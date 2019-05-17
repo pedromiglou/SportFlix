@@ -1,0 +1,305 @@
+<style>
+    .titulo {
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 25px;
+    }
+
+    body {
+        background-image: url('https://cdn.pixabay.com/photo/2014/11/25/20/44/rows-of-seats-545611_960_720.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 25px;
+    }
+
+    .op {
+        padding: 25px;
+    }
+</style>
+
+<section>
+    <div class="titulo">
+        <h2 data-bind="text: displayName"></h2>
+    </div>
+    <div class="container">
+
+        <h2>What do you want to do?</h2>
+        <hr>
+
+
+
+        <div class="op" style="padding-top: 0;">
+
+            
+    <button type="button" class="btn btn-dark col-sm-5" style="float: left; margin-left: 8px;" data-toggle="modal"
+    data-target="#exampleModalCenter" data-bind="visible: isSpecialAccount">Upload a video!</button>
+<button type="button" class="btn btn-dark col-sm-5" style="float: right;" data-toggle="modal"
+    data-target="#exampleModalCenter" data-bind="visible: isSpecialAccount">Upload an event!</button>
+    
+        </div>
+        <hr>
+        <div class="op" style=" padding-top: 0;">
+
+            <label for="accountInfo" class="col-sm-6 col-form-label">See your account info:</label>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary col-sm-6" id="accountInfo" data-toggle="modal"
+                data-target="#accInfo">
+                Click here!
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="accInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="accccInfo">Account Info</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form>
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-3 col-form-label">Name:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" readonly class="form-control-plaintext" id="name"
+                                            data-bind="value: fname">
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="SecName" class="col-sm-3 col-form-label">Last name:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" readonly class="form-control-plaintext " id="SecName"
+                                            data-bind="value: lname">
+                                    </div>
+
+                                </div>
+                                <hr />
+                                <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-3 col-form-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" readonly class="form-control-plaintext " id="staticEmail"
+                                            data-bind="value: email">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="usernamee" class="col-sm-3 col-form-label">Username</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" readonly class="form-control-plaintext " id="username"
+                                            data-bind="value: username">
+                                    </div>
+
+                                </div>
+                            </form>
+                            <button type="button" class="btn btn-secondary" style="float:right;"
+                                data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="op">
+            <!--HISTORICO-->
+            <label for="history" class="col-sm-6 col-form-label">See your watch history:</label>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary col-sm-6" id="history" data-toggle="modal"
+                data-target="#watx_history">
+                Click here!
+            </button>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="watx_history" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Watch history:</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <button type="button" class="btn btn-secondary" style="float: right;"
+                                data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="op">
+            <!--FAVORITOS-->
+            <label for="favs" class="col-sm-6 col-form-label">See your favourites:</label>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary col-sm-6" id="favs" data-toggle="modal"
+                data-target="#favoritos">
+                Click here!
+            </button>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="favoritos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Your favourites:</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <button type="button" class="btn btn-secondary" style="float: right;"
+                                data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="op">
+            <!--EVENTOS GUARDADOS-->
+            <label for="saved_evs" class="col-sm-6 col-form-label">See the events you saved:</label>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary col-sm-6" id="saved_evs" data-toggle="modal"
+                data-target="#saved_events">
+                Click here!
+            </button>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="saved_events" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Saved events:</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <button type="button" class="btn btn-secondary" style="float: right;"
+                                data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="op">
+
+            <!--WATCH LATER-->
+            <label for="vermaistarde" class="col-sm-6 col-form-label">See your "Watch Later" videos:</label>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary col-sm-6" id="vermaistarde" data-toggle="modal"
+                data-target="#watxLater">
+                Click here!
+            </button>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="watxLater" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Watch Later:</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <button type="button" class="btn btn-secondary" style="float: right;"
+                                data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="op">
+            <!--TEAMS U FOLLOW-->
+            <label for="follow" class="col-sm-6 col-form-label">See the teams you follow:</label>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary col-sm-6" id="follow" data-toggle="modal"
+                data-target="#teamsUFollow">
+                Click here!
+            </button>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="teamsUFollow" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Teams followed:</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div data-bind="foreach: favouriteTeams">
+                            <p data-bind="text: $data"></p>
+                        </div>
+                        <div class="modal-body">
+                            <button type="button" class="btn btn-secondary" style="float: right;"
+                                data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="op">
+            <button type="button" class="btn btn-primary col-sm-12" id="logOut" data-toggle="modal"
+                data-bind="click: logout">
+                Click here to log out!
+            </button>
+        </div>
+
+
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalCenterTitle" style="color: red;">Error</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    This functionality is not yet available on our system...<br>Try again later!
+
+                    <button type="button" style="float:right;" class="btn btn-secondary"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

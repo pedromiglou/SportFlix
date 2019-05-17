@@ -1,0 +1,31 @@
+<style>
+    body {
+        background: url('./img/stadium_wallpaper_ligaEspecifica.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y: -200px;
+    }
+</style>
+
+<section>
+    <h1 style = "color: white" data-bind="text: selectedLeague"></h4>
+
+    <div class="container">
+        <table class="table" style="background:white;">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Points</th>
+                </tr>
+            </thead>
+            <tbody  data-bind="foreach: teams">
+                <tr>
+                    <th scope="row" data-bind="text: position"></th>
+                    <td><a href="#equipa"  data-bind="text: name, click: selectTeam(name)"></a></td>
+                    <td data-bind="text: points"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

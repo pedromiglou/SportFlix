@@ -1,0 +1,52 @@
+﻿<style>
+    .thumbnail {
+        color: black;
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-image: url("https://c.pxhere.com/photos/ff/d2/mass_people_supporters_group_of_people_crowds_crowd_union-631790.jpg!d");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .titulo {
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 25px;
+    }
+</style>
+
+<section>
+    <div class="titulo">
+        <h2 data-bind="text: displayName"></h2>
+    </div>
+    
+
+    <div class="container-fluid" style="justify-content: space-evenly;">
+        <div class="card-deck" data-bind="foreach: images">
+            <div class="col-sm-6 col-md-3"
+                style="text-align: center; align-content: center; align-items: center; align-self: center; box-align: center;">
+                <div class="row">
+                    <!-- <a href="#" class="thumbnail" data-bind="click:$parent.select" style="border:0;">-->
+
+                    <div class="card" style="width: 18rem; border-radius: 20px; margin-bottom: 15px;">
+
+                        <img class="card-img-top" style="border-radius: 20px;" data-bind="attr: { src: flag }"
+                            alt="Card image cap">
+                    
+                        <div class="card-body">
+                            <!--Aqui o q se tem de fazer é uma label!!!!!! (ja n me lembro)-->
+                            <a class="thumbnail"  data-bind="click:$parent.select, attr: {href : nextPage}">
+                                <p class="card-text" data-bind="text : name, click: selectLeague(name)"></p>
+                            </a>
+                            <!--<a href="#" class="btn" data-bind="text : name; click:$parent.select"></a>-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

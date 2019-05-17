@@ -1,0 +1,71 @@
+﻿<style>
+    
+    nav {
+        
+        background-color: rgb(68, 163, 76);
+        z-index: 100;
+        color: white;
+    }
+    
+</style>
+
+
+<div>
+    <!--<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="navbar-brand" href="#">
+                <i class="fa fa-home"></i>
+                <span>Durandal</span>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav" data-bind="foreach: router.navigationModel">
+                <li data-bind="css: { active: isActive }">
+                    <a data-bind="attr: { href: hash }, text: title"></a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="loader" data-bind="css: { active: router.isNavigating }">
+                    <i class="fa fa-spinner fa-spin fa-2x"></i>
+                </li>
+            </ul>
+
+            <form class="navbar-form navbar-right" role="search" data-bind="submit:search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </form>
+        </div>
+    </na
+-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <a class="navbar-brand" href="#">Highlights</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav" data-bind="foreach: router.navigationModel">
+                <a class="navigationBar nav-item nav-link" data-bind="attr: { href: hash }, text: title"></a>
+            </div>
+        </div>
+    </nav>
+
+
+
+      
+      
+
+
+    <div class="page-host" data-bind="router: { transition:'entrance' }"></div>
+</div>

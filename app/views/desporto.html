@@ -1,0 +1,66 @@
+<!--<section>
+    <h2 data-bind="text: displayName"></h2>
+    <div class="row" data-bind="foreach: images">
+        <div class="col-sm-6 col-md-3">
+            <a href="#" class="thumbnail" data-bind="click:$parent.select">
+                <img style="width: 260px; height: 180px;" data-bind="attr: { src: flag }"/>
+                <p style = "text-align: center; font-size: 50px" data-bind="text : name"></p>
+            </a>
+        </div>
+    </div>
+</section>
+-->
+<style>
+    body {
+        background-image: url("https://cdn-snowboarding.transworld.net/blogs.dir/442/files/2018/02/Ayumu_2018Winter_Olympics_Clavin35.jpg");
+        background-position-y: -220px;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+
+    .titulo {
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 25px;
+    }
+
+    .thumbnail {
+        color: black;
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<section>
+    <div class="titulo">
+        <h1 data-bind="text: displayName"></h1>
+    </div>
+    <div class="container-fluid" style="justify-content: space-evenly;">
+        <div class="card-deck" data-bind="foreach: images">
+            <div class="col-sm-6 col-md-3"
+                style="text-align: center; align-content: center; align-items: center; align-self: center; box-align: center;">
+                <div class="row">
+                    <div class="card" style="width: 18rem; border-radius: 20px; margin-bottom: 15px;">
+                        <img class="card-img-top" style="border-radius: 20px;" data-bind="attr: { src: flag }"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <a href="#desporto1" class="thumbnail" data-bind="click:$parent.select, click: setSport(name)">
+                                <p class="card-text" data-bind="text : name"></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    
+      
+                <img style="width: 260px; height: 180px;" data-bind="attr: { src: flag }"/>
+                <p style = "text-align: center; font-size: 50px" data-bind="text : name"></p>
+        </div>
+-->
+
+</section>

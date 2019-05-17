@@ -1,0 +1,45 @@
+<style>
+    body {
+        background-image: url('./img/ice_ring.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+    }
+
+
+    .titulo {
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 25px;
+    }
+</style>
+
+<section>
+    <div class="titulo">
+        <h2 data-bind="text: selectedLeague"></h2>
+    </div>
+    <div class="titulo">
+        <h2 data-bind="text: selectedTeam"></h2>
+        <button type="button" class="btn btn-warning" data-bind="click: setFavourite, text: followButton"></button>
+    </div>
+
+    <div class="container">
+        <table class="table" style="background:white;">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Position</th>
+                </tr>
+            </thead>
+            <tbody  data-bind="foreach: players">
+                <tr>
+                    <th scope="row" data-bind="text: number"></th>
+                    <td data-bind="text: name"></td>
+                    <td data-bind="text: position"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

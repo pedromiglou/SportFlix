@@ -1,0 +1,53 @@
+<section>
+    <h1 data-bind="text: displayName"></h4>
+    <style>
+    body{
+        background: url('./img/Stadium_Lights.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    </style>
+    <div class="container">
+        <div class="dropdown">
+            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" style="margin-bottom: 10px;"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose a country
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" >Austria</a>
+                <a class="dropdown-item" >Brazil</a>
+                <a class="dropdown-item" >England</a>
+                <a class="dropdown-item" >Germany</a>
+                <a class="dropdown-item" >Japan</a>
+                <a class="dropdown-item" >Portugal</a>
+                <a class="dropdown-item" >Russia</a>
+                <a class="dropdown-item" >Turkey</a>
+            </div>
+        </div>
+        <table class="table" style="background: white;">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" colspan="2">Teams</th>
+                    <th scope="col">Sport</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Year</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody  data-bind="foreach: games">
+                <tr>
+                    <th scope="row" data-bind="text : team1"></th>
+                    <th data-bind="text: team2"></th>
+                    <td data-bind="text: sport"></td>
+                    <td data-bind="text: country"></td>
+                    <td data-bind="text: year"></td>
+                    <td><button type="button" class="btn btn-primary btn-sm">add to favourites</button></td>
+                    <td><button type="button" class="btn btn-primary btn-sm">add to watch later</button></td>
+                    <th style="float:right;">Click here to watch!</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

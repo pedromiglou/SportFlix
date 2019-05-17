@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SportFlix</title>
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/ie10mobile.css" />
+    <link rel="stylesheet" href="lib/durandal/css/durandal.css" />
+    <link rel="stylesheet" href="css/starterkit.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #2d2a2d;
+            background-image: url("./img/tennis_court2.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position-y: -3.3rem;
+        }
+
+        h1 {
+            font-size: 80px;
+            color: white;
+        }
+
+        .loginCard {
+            float: right;
+            margin-right: 16rem;
+            margin-top: 13rem;
+        }
+
+        .prices {
+            background-color: #2d2a2d;
+            margin-top: 55rem;
+
+
+        }
+
+        .container {
+            margin-top: 10rem;
+            justify-content: center;
+            padding-bottom: 10rem;
+            flex-wrap: wrap;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1 style="color:transparent">.</h1>
+
+
+
+
+    <div class="card text-center loginCard" style="width: 18rem;">
+        <div class="card-body">
+            <h4>Aready have an account?</h4>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal"
+                data-bind="click: clean">
+                Log in
+            </button>
+            <h5>Don't have one yet?<br /> Scroll down for subscription subssubssubsoptions.</h5>
+        </div>
+    </div>
+
+    <div class="prices">
+        <h2 style="display: block; color: white; font-size: 40px;">Subscription plans</h2>
+        <div class="container" style="display: flex;">
+
+
+            <div class="card-deck">
+                <div class="card text-center" style="width: 30rem;">
+                    <div class="card-body">
+                        <h3>Monthly Subscription</h3><br />
+                        <hr /><br />
+                        <p>Now only for <span style="font-size: 40px">3,48</span>€</p><br /><br />
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createaccount"
+                            data-bind="click: clean">
+                            Select
+                        </button><br />
+                        <br />
+                    </div>
+                </div>
+                <div class="card text-center" style="width: 30rem;">
+                    <div class="card-body">
+                        <h3>4-Month Subscription</h3><br />
+                        <hr />
+                        <br />
+                        <p>Now only for <span style="font-size: 40px">14,99</span>€</p> <br /><br />
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createaccount"
+                            data-bind="click: clean">
+                            Select
+                        </button><br />
+
+                    </div>
+                </div>
+            </div>
+            <p style="color:white; margin-top: 8rem; text-align: center; width:100%">Do you want to stream a game?
+                Contact us at email@sportflix.com.</p>
+        </div>
+
+    </div>
+
+
+    <!-- Modal(log in) -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="login">Log in</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter email" data-bind="value: email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                data-bind="value: password" placeholder="Password">
+                        </div>
+
+                        <div class="alert alert-danger" data-bind="visible: loginerrado">
+                            O email e a palavra passe não correspondem.
+                        </div>
+
+                        <button style="float: right;" type="button" class="btn btn-primary"
+                            data-bind="click:login">Enter</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--É NECESSARIO POR OBRIGATORIO PREENCHER TUDO??-->
+
+    <!-- Modal (criar conta) -->
+    <div class="modal fade" id="createaccount" tabindex="-1" role="dialog" aria-labelledby="createacc"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="createacc">Sign Up</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">First and last name</span>
+                            </div>
+                            <input type="text" aria-label="First name" class="form-control" data-bind="value: fname">
+                            <input type="text" aria-label="Last name" class="form-control" data-bind="value: lname">
+                        </div><br />
+
+                        <div class="input-group-prepend">
+                            <span for="exampleFormControlInput1" class="input-group-text">Email adress</span>
+                        </div>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com" data-bind="value: email">
+                        <br />
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">@</div>
+                        </div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username"
+                            data-bind="value: username">
+                        <br />
+                        <div class="input-group-prepend">
+                            <label for="inputPassword5" class="input-group-text">Password</label></div>
+                        <input type="password" id="inputPassword5" class="form-control"
+                            aria-describedby="passwordHelpBlock" data-bind="value: password">
+                        <!--
+                        <small id="passwordHelpBlock" class="form-text text-muted">
+                            Your password must be 8-20 characters long, contain letters and numbers, and must not contain
+                            spaces, special characters, or emoji.
+                        </small>
+                        -->
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required
+                                    data-bind="checked : signinenable">
+                                <label class="form-check-label" for="invalidCheck" style="margin-left: 2rem;">
+                                    Agree to terms and conditions
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree before submitting.
+                                </div>
+                            </div>
+                        </div>
+                        <br /> <button style="float: right;" type="submit" class="btn btn-primary"
+                            data-bind="click:signin, enable:signinenable" data-dismiss="modal">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-debug.js"></script>
+    <script src="lib/require/require.js" data-main="app/main"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

@@ -12,12 +12,12 @@ define(['plugins/http', 'durandal/app', 'knockout'], function (http, app, ko) {
         {name: "Track and Field", flag: "./img/Track_and_Field.png"}]);
 
     games = ko.observableArray([
-        {'team1' : 'Benfica', 'team2' : 'Braga', 'sport' : 'Football', 'country' : 'Portugal', 'year': 2019},
-        {'team1' : 'Sporting', 'team2' : 'Guimarães', 'sport' : 'Football', 'country' : 'Portugal', 'year' : 2018},
-        {'team1' : 'Porto', 'team2' : 'Belenenses', 'sport' : 'Football', 'country' : 'Portugal', 'year' : 2018},
-        {'team1' : 'Real Madrid', 'team2' : 'Barcelona', 'sport' : 'Football', 'country' : 'Spain', 'year' : 2017},
-        {'team1' : 'Alexander Zverev' , 'team2' : 'Matteo Berrettini', 'sport' : 'Tennis' , 'country' : 'Italy' , 'year' : 2019} ,
-        {'team1' : 'Benoit Paire' , 'team2' : 'Diego Shwartzman', 'sport' : 'Tennis' , 'country' : 'Germany' , 'year' : 2019}
+        {'id':'1', 'team1' : 'Benfica', 'team2' : 'Braga', 'sport' : 'Football', 'country' : 'Portugal', 'year': 2019},
+        {'id':'2', 'team1' : 'Sporting', 'team2' : 'Guimarães', 'sport' : 'Football', 'country' : 'Portugal', 'year' : 2018},
+        {'id':'3', 'team1' : 'Porto', 'team2' : 'Belenenses', 'sport' : 'Football', 'country' : 'Portugal', 'year' : 2018},
+        {'id':'4', 'team1' : 'Real Madrid', 'team2' : 'Barcelona', 'sport' : 'Football', 'country' : 'Spain', 'year' : 2017},
+        {'id':'5', 'team1' : 'Alexander Zverev' , 'team2' : 'Matteo Berrettini', 'sport' : 'Tennis' , 'country' : 'Italy' , 'year' : 2019} ,
+        {'id':'6', 'team1' : 'Benoit Paire' , 'team2' : 'Diego Shwartzman', 'sport' : 'Tennis' , 'country' : 'Germany' , 'year' : 2019}
     ]);
 
     filteredGames = ko.observableArray([]);

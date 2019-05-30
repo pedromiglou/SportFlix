@@ -15,7 +15,8 @@
                 { route: 'MyAccount', moduleId: 'viewmodels/conta', nav: true },
                 { route: 'liga', moduleId: 'viewmodels/liga', nav: false },
                 { route: 'desporto1', moduleId: 'viewmodels/desporto1', nav: false },
-                { route: 'equipa', moduleId: 'viewmodels/equipa', nav: false }
+                { route: 'equipa', moduleId: 'viewmodels/equipa', nav: false },
+                { route: 'WatchGame', moduleId: 'viewmodels/video', nav: false }
 
             ]).buildNavigationModel();
             

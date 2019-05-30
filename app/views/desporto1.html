@@ -1,5 +1,5 @@
 <section>
-    <h1 data-bind="text: displayName"></h4>
+    <h1 data-bind="text: displayName"></h1>
     <style>
     body{
         background: url('./img/Stadium_Lights.jpg');
@@ -13,15 +13,15 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Choose a country
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" >Austria</a>
-                <a class="dropdown-item" >Brazil</a>
-                <a class="dropdown-item" >England</a>
-                <a class="dropdown-item" >Germany</a>
-                <a class="dropdown-item" >Japan</a>
-                <a class="dropdown-item" >Portugal</a>
-                <a class="dropdown-item" >Russia</a>
-                <a class="dropdown-item" >Turkey</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-bind="event: { mouseover: enableFiltro}">
+                <a class="dropdown-item" data-bind="click: update2('Austria')">Austria</a>
+                <a class="dropdown-item" data-bind="click: update2('Brazil')">Brazil</a>
+                <a class="dropdown-item" data-bind="click: update2('England')">England</a>
+                <a class="dropdown-item" data-bind="click: update2('Germany')">Germany</a>
+                <a class="dropdown-item" data-bind="click: update2('Japan')">Japan</a>
+                <a class="dropdown-item" data-bind="click: update2('Portugal')">Portugal</a>
+                <a class="dropdown-item" data-bind="click: update2('Russia')">Russia</a>
+                <a class="dropdown-item" data-bind="click: update2('Turkey')">Turkey</a>
             </div>
         </div>
         <table class="table" style="background: white;">
@@ -36,16 +36,16 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody  data-bind="foreach: games">
+            <tbody  data-bind="foreach: filteredGames">
                 <tr>
                     <th scope="row" data-bind="text : team1"></th>
                     <th data-bind="text: team2"></th>
                     <td data-bind="text: sport"></td>
                     <td data-bind="text: country"></td>
                     <td data-bind="text: year"></td>
-                    <td><button type="button" class="btn btn-primary btn-sm">add to favourites</button></td>
-                    <td><button type="button" class="btn btn-primary btn-sm">add to watch later</button></td>
-                    <th style="float:right;">Click here to watch!</th>
+                    <td><button type="button" class="btn btn-primary btn-sm" data-bind="click:$parent.setFavourite, text: favourite"></button></td>
+                    <td><button type="button" class="btn btn-primary btn-sm" data-bind="click:$parent.setWatchLater, text: watchLater"></button></td>
+                    <th style="float:right;"><a href = "#WatchGame">Click here to watch!</a></th>
                 </tr>
             </tbody>
         </table>

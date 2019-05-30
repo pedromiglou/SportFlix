@@ -13,11 +13,7 @@ define(['plugins/http', 'durandal/app', 'knockout'], function (http, app, ko) {
 
         selectLeague = function(name) {
             localStorage.setItem("selectedLeague", name);
-            if (name != "Bundesliga") {
-                nextPage("#Leagues");
-            } else {
-                nextPage("#liga");
-            }
+            nextPage("#liga");
         }
     };
     return vm;

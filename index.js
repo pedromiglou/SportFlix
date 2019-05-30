@@ -13,11 +13,11 @@ var vm = function () {
         console.log(localStorage.getItem("contas"));
         if (localStorage.getItem("contas") == null) {
             console.log("nice");
-            self.users = ko.observableArray([{ 'fname' : 'Super', 'lname' : 'user', 'email' : 'super@gmail.com', 'username' : 'Super', 'password' : 'palavrapasse', 'favouriteTeams' : [], 'isSpecialAccount' : true}]);
+            self.users = ko.observableArray([{ 'fname' : 'Super', 'lname' : 'user', 'email' : 'super@gmail.com', 'username' : 'Super', 'password' : 'palavrapasse', 'favouriteTeams' : [], 'isSpecialAccount' : true, 'favouriteGames' : [], 'watchLater' : []}]);
         } else {
             self.users = ko.observableArray(JSON.parse(localStorage.getItem("contas")));
         }
-        self.newUser = ko.observable({ 'fname' : self.fname(), 'lname' : self.lname(), 'email' : self.email(), 'username' : self.username(), 'password' : self.password(), 'favouriteTeams' : [], 'isSpecialAccount' : false});
+        self.newUser = ko.observable({ 'fname' : self.fname(), 'lname' : self.lname(), 'email' : self.email(), 'username' : self.username(), 'password' : self.password(), 'favouriteTeams' : [], 'isSpecialAccount' : false, 'favouriteGames' : [], 'watchLater' : []});
         self.users.push(self.newUser());
         console.log(self.users());
         localStorage.setItem("contas", JSON.stringify(self.users()));
@@ -26,7 +26,7 @@ var vm = function () {
     self.login = function() {
         if (localStorage.getItem("contas") == null) {
             console.log("nice");
-            self.users = ko.observableArray([{ 'fname' : 'Super', 'lname' : 'user', 'email' : 'super@gmail.com', 'username' : 'Super', 'password' : 'palavrapasse', 'favouriteTeams' : [], 'isSpecialAccount' : true}]);
+            self.users = ko.observableArray([{ 'fname' : 'Super', 'lname' : 'user', 'email' : 'super@gmail.com', 'username' : 'Super', 'password' : 'palavrapasse', 'favouriteTeams' : [], 'isSpecialAccount' : true, 'favouriteGames' : [], 'watchLater' : []}]);
         } else {
             self.users = ko.observableArray(JSON.parse(localStorage.getItem("contas")));
         }

@@ -1,34 +1,41 @@
 define(['plugins/http', 'durandal/app', 'knockout'], function (http, app, ko) {
     var vm = function () {
-
-        players = ko.observableArray([
+        if (localStorage.getItem("reload") == "true") {
+            location.reload();
+            localStorage.setItem("reload", "false");
+        }
+        self = this;
+        self.players = ko.observableArray([
             {'number' : 09 , 'name' : 'Robert Lewandowski', 'position' : 'Forward'},
             {'number' : 25 , 'name' : 'Thomas Müller', 'position' : 'Forward'},
             {'number' : 32 , 'name' : 'Joshua Kimmich', 'position' : 'Defender'}
         ]);
-        
-        selectedLeague = localStorage.getItem("selectedLeague");
 
-        selectedTeam = localStorage.getItem("selectedTeam");
+        self.selectedTeam = ko.observable(localStorage.getItem("selectedTeam"));
 
-        conta = ko.observable(JSON.parse(localStorage.getItem("ativa")));
+        self.conta = ko.observable(JSON.parse(localStorage.getItem("ativa")));
 
-        followed = ko.observable(conta().favouriteTeams.indexOf(selectedTeam) > -1);
+        self.followed = ko.observable(self.conta().favouriteTeams.indexOf(self.selectedTeam()) > -1);
 
-        followButton = ko.observable(followed() ? "Followed!" : "Follow team!");
+        self.followButton = ko.observable(self.followed() ? "Followed!" : "Follow team!");
 
-        setFavourite = function() {
-            if (followed()) {
-                console.log(conta().favouriteTeams)
-                delete conta().favouriteTeams[conta().favouriteTeams.indexOf(selectedTeam)];
-                followed(false);
-                followButton("Follow team!");
+        self.setFavourite = function() {
+            if (self.followed()) {
+                temp1 = [];
+                for (team of self.conta().favouriteTeams) {
+                    if (team != self.selectedTeam()) {
+                        temp1.push(team);
+                    }
+                }
+                self.conta().favouriteTeams = temp1;
+                self.followed(false);
+                self.followButton("Follow team!");
             } else {
-                conta().favouriteTeams.push(selectedTeam);
-                followed(true);
-                followButton("Followed!");
+                self.conta().favouriteTeams.push(self.selectedTeam());
+                self.followed(true);
+                self.followButton("Followed!");
             }
-            localStorage.setItem("ativa", JSON.stringify(conta()));
+            localStorage.setItem("ativa", JSON.stringify(self.conta()));
         }
     };
     return vm;

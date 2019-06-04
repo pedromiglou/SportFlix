@@ -1,5 +1,31 @@
 <section>
-    <h2 data-bind="text: displayName"></h2>
+    <style>
+        body {
+            /* background-image: url("https://cdn-snowboarding.transworld.net/blogs.dir/442/files/2018/02/Ayumu_2018Winter_Olympics_Clavin35.jpg");
+        */
+            background-image: url('./img/bg.jpg');
+            /*
+        background-position-y: -220px;
+        */
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: 'Maven Pro', sans-serif;
+
+        }
+
+        .modal-title,
+        .titulo-card {
+
+            font-family: 'Concert One', cursive;
+        }
+    </style>
+
+
+
+<hr>
+    <h1 style="font-family: 'Concert One', cursive; color: white; text-align: center;" data-bind="text: displayName"></h1>
+    <hr>
     <div class="container-fluid" style="justify-content: space-evenly;">
         <div class="card-deck" data-bind="foreach: eventos">
             <div class="col-sm-6 col-md-3"
@@ -9,47 +35,15 @@
                         <img class="card-img-top" style="border-radius: 20px;" data-bind="attr: { src: imagem }"
                             alt="Card image cap">
                         <div class="card-body">
-                            
-                                <p data-bind="text : title"></p>
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#exampleModalCenter">Click to read more</button>
-                                <button type="button" class="btn btn-warning"
-                                            data-dismiss="modal">Save event!</button>
+
+                            <p class="titulo-card" data-bind="text : title"></p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#exampleModalCenter" data-bind="click: $parent.fillModal">Click to read more</button>
+                            <button type="button" class="btn btn-warning" data-dismiss="modal" data-bind="click: $parent.saveEvent, text: saved"></button>
 
                         </div>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalCenterTitle"
-                            arisecondarysecondarysecondarysecondarya-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-
-                                        <h3 class="modal-title" id="exampleModalCenterTitle" data-bind="text : title">
-                                        </h3>
-
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p data-bind="text : text">
-
-                                        </p>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <p>Posted on: <span data-bind="text : data"></span></p>
-                                        <button type="button" class="btn btn-warning" data-dismiss="modal">Save
-                                            event!</button>
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end MODAL-->
+                        
 
                     </div>
                 </div>
@@ -57,4 +51,38 @@
         </div>
     </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    arisecondarysecondarysecondarysecondarya-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h3 class="modal-title" id="exampleModalCenterTitle" data-bind="text : modalTitle">
+                </h3>
+            
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p data-bind="text : modalText">
+
+                </p>
+
+            </div>
+            <div class="modal-footer">
+                <p>Posted on: <span data-bind="text : modalData"></span></p>
+<!--
+                <button type="button" class="btn btn-warning" data-dismiss="modal" data-bind="click: $parent.saveEvent, text:saved"></button>
+-->                                    
+                <button type="button" class="btn btn-secondary"
+                    data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end MODAL-->
 </section>

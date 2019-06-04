@@ -57,21 +57,28 @@ define(['knockout'], function (ko) {
         // atualizar por pais
         self.enableFilter = ko.observable(false);
 
-        update2 = function(pais) {
-            if (self.enableFilter()) {
-                self.selectedCountry = (pais==null) ? self.selectedCountry : pais;
-                self.filteredGames([]);
-                for (i = 0; i < self.games().length; i++) {
-                    if (self.games()[i].country == self.selectedCountry) {
-                        self.filteredGames.push(self.games()[i]);
-                    }
+        self.update2 = function(pais) {
+            var temp3 = ko.observableArray([]);
+            for (i = 0; i < self.filteredGames().length; i++) {
+                if (self.filteredGames()[i].country == pais) {
+                    temp3.push(self.filteredGames()[i]);
                 }
-                console.log(self.filteredGames());
             }
+            self.filteredGames(temp3());
+        }
+
+        //atualizar por ano
+        self.update3 = function(ano) {
+            var temp4 = ko.observableArray([]);
+            for (i = 0; i < self.filteredGames().length; i++) {
+                if (self.filteredGames()[i].year == ano) {
+                    temp4.push(self.filteredGames()[i]);
+                }
+            }
+            self.filteredGames(temp4());
         }
 
         enableFiltro = function() {
-            console.log("enabled");
             self.enableFilter(true);
         }
 
@@ -89,12 +96,11 @@ define(['knockout'], function (ko) {
             }
             localStorage.setItem("ativa", JSON.stringify(conta()));
             self.update();
-            update2();
+            self.filter("null", "null");
             
         }
 
         self.setWatchLater = function (game) {
-            console.log(self.isWatchLater(game));
             if (self.isWatchLater(game)) {
                 for (i=0; i < conta().watchLater.length; i++) {
                     if (conta().watchLater[i].id == game.id) {
@@ -107,21 +113,30 @@ define(['knockout'], function (ko) {
             }
             localStorage.setItem("ativa", JSON.stringify(conta()));
             self.update();
-            update2();
+            self.filter("null", "null");
         }
 
+        // funçao chamada pelos filtros
+        self.country = "all";
+        self.year = "all"
+        self.filter = function(pais, ano) {
+            if (self.enableFilter()) {
+                self.country = (pais != "null") ? pais : self.country;
+                self.year = (ano != "null") ? ano: self.year;
+                self.filteredGames(self.games());
+                if (self.country != "all") self.update2(self.country);
+                if (self.year!="all") self.update3(self.year);
+            }
+        }
+
+        //gravar o nome do jogo
+        self.setGame = function(data) {
+            localStorage.setItem("selectedGame", JSON.stringify(data));
+            conta().history.push(data)
+            localStorage.setItem("ativa", JSON.stringify(conta()));
+            return true;
+        }
     };
 
     return vm;
 });
-
-//ESTA PAGINA É DOS JOGOS!
-
-/*
-    {'jogador1' : 'Alexander Zverev' , 'jogador2' : 'Matteo Berrettini' , 'country' : 'Italy' , 'year' : 2019} ,
-    {'jogador1' : 'Benoit Paire' , 'jogador2' : 'Diego Shwartzman' , 'country' : 'Germany' , 'year' : 2019}
-
-ISTO É DE TENIS
-
-//CRIA uma seccao para as "equipas" q sao apenas pessoas individuais plz e mete uma hiperligacao destes nomes para lá
-*/

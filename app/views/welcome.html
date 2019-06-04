@@ -1,8 +1,15 @@
 ﻿<style>
     body {
-        background: url('./img/ice_hockey.png');
+        background: url('./img/bg.jpg');
         background-size: cover;
         background-repeat: no-repeat;
+        font-family: 'Maven Pro', sans-serif;
+
+    }
+
+    .modal-title {
+
+        font-family: 'Concert One', cursive;
     }
 </style>
 
@@ -31,7 +38,8 @@
     </style>
 
     <div class="row" style=" margin-top: 5px;">
-        <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel" style="border-radius: 20px; margin-top: 15px;">
+        <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel"
+            style="border-radius: 20px; margin-top: 15px;">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -67,7 +75,9 @@
         </div>
 
     </div>
-    <h2>.:: NEWS ::.</h2>
+    <hr>
+    <h2 style="font-family: 'Concert One', sans-serif; color: white; text-align: center;">News</h2>
+    <hr>
 
     <div class="container-fluid" style="justify-content: space-evenly;">
         <div class="card-deck" data-bind="foreach: noticias">

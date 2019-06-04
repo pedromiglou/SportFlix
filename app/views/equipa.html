@@ -4,6 +4,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        font-family: 'Maven Pro', sans-serif;
 
     }
 
@@ -16,15 +17,13 @@
 </style>
 
 <section>
-    <div class="titulo">
-        <h2 data-bind="text: selectedLeague"></h2>
-    </div>
-    <div class="titulo">
-        <h2 data-bind="text: selectedTeam"></h2>
-        <button type="button" class="btn btn-warning" data-bind="click: setFavourite, text: followButton"></button>
-    </div>
+<br>
+        <h2 style="font-family: 'Concert One', cursive; color: white; text-align: center;" data-bind="text: selectedTeam"></h2>
+        
+<br>
 
     <div class="container">
+        <button type="button" style="margin-bottom: 10px;" class="btn btn-warning" data-bind="click: setFavourite, text: followButton"></button>
         <table class="table" style="background:white;">
             <thead class="thead-dark">
                 <tr>

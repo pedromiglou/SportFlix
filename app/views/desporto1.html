@@ -1,12 +1,16 @@
 <section>
-    <h1 data-bind="text: displayName"></h1>
-    <style>
-    body{
-        background: url('./img/Stadium_Lights.jpg');
-        background-size: cover;
-        background-attachment: fixed;
-    }
-    </style>
+        <style>
+                body{
+                    background: url('./img/Stadium_Lights.jpg');
+                    background-size: cover;
+                    background-attachment: fixed;
+                    font-family: 'Maven Pro', sans-serif;
+                }
+                </style>
+
+                <br>
+    <h2 style="font-family: 'Concert One', cursive; color: white; text-align: center;" data-bind="text: displayName"></h2>
+    
     <div class="container">
         <div class="dropdown">
             <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" style="margin-bottom: 10px;"
@@ -14,16 +18,35 @@
                 Choose a country
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-bind="event: { mouseover: enableFiltro}">
-                <a class="dropdown-item" data-bind="click: update2('Austria')">Austria</a>
-                <a class="dropdown-item" data-bind="click: update2('Brazil')">Brazil</a>
-                <a class="dropdown-item" data-bind="click: update2('England')">England</a>
-                <a class="dropdown-item" data-bind="click: update2('Germany')">Germany</a>
-                <a class="dropdown-item" data-bind="click: update2('Japan')">Japan</a>
-                <a class="dropdown-item" data-bind="click: update2('Portugal')">Portugal</a>
-                <a class="dropdown-item" data-bind="click: update2('Russia')">Russia</a>
-                <a class="dropdown-item" data-bind="click: update2('Turkey')">Turkey</a>
+                <a class="dropdown-item" data-bind="click: filter('all', 'null')">See all</a>
+                <a class="dropdown-item" data-bind="click: filter('Austria', 'null')">Austria</a>
+                <a class="dropdown-item" data-bind="click: filter('Brazil', 'null')">Brazil</a>
+                <a class="dropdown-item" data-bind="click: filter('England', 'null')">England</a>
+                <a class="dropdown-item" data-bind="click: filter('Germany', 'null')">Germany</a>
+                <a class="dropdown-item" data-bind="click: filter('Japan', 'null')">Japan</a>
+                <a class="dropdown-item" data-bind="click: filter('Portugal', 'null')">Portugal</a>
+                <a class="dropdown-item" data-bind="click: filter('Russia', 'null')">Russia</a>
+                <a class="dropdown-item" data-bind="click: filter('Turkey', 'null')">Turkey</a>
             </div>
         </div>
+        <div class="dropdown">
+                <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton2" style="margin-bottom: 10px;"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Chose a year
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2" data-bind="event: { mouseover: enableFiltro}">
+                    <a class="dropdown-item" data-bind="click: filter('null', 'all')">See all</a>
+                    <a class="dropdown-item" data-bind="click: filter('null', '2019')">2019</a>
+                    <a class="dropdown-item" data-bind="click: filter('null', '2018')">2018</a>
+                    <a class="dropdown-item" data-bind="click: filter('null', '2017')">2017</a>
+                    <a class="dropdown-item" data-bind="click: filter('null', '2016')">2016</a>
+                    <a class="dropdown-item" data-bind="click: filter('null', '2015')">2015</a>
+                    <a class="dropdown-item" data-bind="click: filter('null', '2014')">2014</a>
+                    <a class="dropdown-item" data-bind="click: filter('null', '2013')">2013</a>
+                    <a class="dropdown-item" data-bind="click: filter('null', '2012')">2012</a>
+                </div>
+            </div>
+
         <table class="table" style="background: white;">
             <thead class="thead-dark">
                 <tr>
@@ -45,7 +68,7 @@
                     <td data-bind="text: year"></td>
                     <td><button type="button" class="btn btn-primary btn-sm" data-bind="click:$parent.setFavourite, text: favourite"></button></td>
                     <td><button type="button" class="btn btn-primary btn-sm" data-bind="click:$parent.setWatchLater, text: watchLater"></button></td>
-                    <th style="float:right;"><a href = "#WatchGame">Click here to watch!</a></th>
+                    <th style="float:right;"><a data-bind="click: $parent.setGame" href = "#WatchGame">Click here to watch!</a></th>
                 </tr>
             </tbody>
         </table>

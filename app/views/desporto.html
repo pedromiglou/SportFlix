@@ -12,10 +12,16 @@
 -->
 <style>
     body {
-        background-image: url("https://cdn-snowboarding.transworld.net/blogs.dir/442/files/2018/02/Ayumu_2018Winter_Olympics_Clavin35.jpg");
+       /* background-image: url("https://cdn-snowboarding.transworld.net/blogs.dir/442/files/2018/02/Ayumu_2018Winter_Olympics_Clavin35.jpg");
+        */
+        background-image: url('./img/bg.jpg');
+        /*
         background-position-y: -220px;
+        */
+        background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
+        font-family: 'Concert One', cursive;
     }
 
     .titulo {
@@ -33,9 +39,9 @@
 </style>
 
 <section>
-    <div class="titulo">
-        <h1 data-bind="text: displayName"></h1>
-    </div>
+    <!--<div class="titulo">--> <hr>
+        <h1 style="font-family: 'Concert One', cursive; color: white; text-align: center;" data-bind="text: displayName"></h1><hr>
+    <!--</div>-->
     <div class="container-fluid" style="justify-content: space-evenly;">
         <div class="card-deck" data-bind="foreach: images">
             <div class="col-sm-6 col-md-3"

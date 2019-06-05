@@ -42,7 +42,7 @@
 
 
             <button type="button" class="btn btn-dark col-sm-5" style="float: left; margin-left: 8px;"
-                data-toggle="modal" data-target="#exampleModalCenter" >Upload a
+                data-toggle="modal" data-target="#notFunctional" >Upload a
                 video!</button>
             <button type="button" class="btn btn-dark col-sm-5" style="float: right;" data-toggle="modal"
                 data-target="#exampleModalCenter" >Upload an event!</button>
@@ -310,29 +310,94 @@
 
     </div>
 
+
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+    <div class="modal fade" id="notFunctional" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalCenterTitle" style="color: red;">Add Event</h3>
+                    <h3 class="modal-title" id="exampleModalCenterTitle" style="color: red;">Error</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" data-bind="value: newTitle">   <!--titulo-->
-                    <input type="text" data-bind="value: newText">      <!--texto-->
-                    <input type="text" data-bind="value: newData">          <!--data-->
-                    <input type="text" data-bind="value: newImagem">        <!--link da imagem-->
+                    This functionality is not yet available on our system...<br>Try again later!
 
-
-                    <button type="button" style="float:right;" class="btn btn-secondary" data-bind="click: setNewEvent"
+                    <button type="button" style="float:right;" class="btn btn-secondary"
                         data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Modal Upload an Event!!!! -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalCenterTitle" >Add an event</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <form>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Title</span>
+                                    </div>
+                                    <input type="text" aria-label="Event title" class="form-control"placeholder="Event title" data-bind="value: newTitle">
+                                </div>
+                                <br />
+        
+                                <div class="input-group-prepend">
+                                    <span for="idd" class="input-group-text">Description</span>
+                                </div>
+                                <input type="text" class="form-control" id="idd"
+                                    placeholder="Description" data-bind="value: newText">
+                                <br />
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">Date</div>
+                                </div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Date"
+                                    data-bind="value: newData">
+                                <br />
+                                <div class="input-group-prepend">
+                                        <div class="input-group-text">URL source of an image</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="(you can leave blank)"
+                                        data-bind="value: newImagem">
+                                    <br />
+                                </form>
+                                <button type="button" style="float:right; margin-left: 5px;" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" style="float:right;" class="btn btn-primary" data-bind="click: setNewEvent" data-dismiss="modal">Submit</button>
+
+                
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
 </section>

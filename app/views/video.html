@@ -28,11 +28,11 @@
     </style>
    
    
-    
+
     <div class="container">
 <h2 data-bind="text: titulo" style="font-family: 'Concert One', sans-serif;"></h2>
-        <video width="320" height="240" controls>
-            <source src="img/example.mp4" type="video/mp4">
+        <video width="320" height="240" controls data-bind="html: VideoUrl">
+            <!--<source src="movie.mp4" type="video/mp4">-->
         </video>
 
         <form style="margin: 10px;">
@@ -44,7 +44,7 @@
             </div>
         </form>
         <div data-bind="foreach: comments">
-            <p> ***nome da pessoa***: <span data-bind="text: $data"></span></p>
+            <p data-bind="text: $data"></p>
         </div>
     </div>
 

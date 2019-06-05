@@ -33,7 +33,15 @@
             max-height: 400px;
             overflow: hidden;
             width: 100%;
-
+        }
+        #bannerImg1 {
+            margin-top: -600px;
+        }
+        #bannerImg2 {
+            margin-top: -540px;
+        }
+        #bannerImg3 {
+            margin-top: -450px;
         }
     </style>
 
@@ -47,8 +55,8 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active" style="margin-top: -160px;">
-                    <img src="http://www.ihf.info/files/uploads/PhotoGallery/56942469_2311010728920160_3506427303502544896_o.jpg?width=799"
-                        class="d-block w-100" alt="handball">
+                    <img src="https://timedotcom.files.wordpress.com/2018/02/lindsey-vonn-alpine.jpg?quality=85"
+                        class="d-block w-100" id="bannerImg1" alt="alpineSkiing_banner">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -56,12 +64,12 @@
                 </div>
                 <!--AS IMAGENS ESTAO BASTANTE MAL COLOCADAS-->
                 <div class="carousel-item" style="margin-top: -100px;">
-                    <img src="https://www.sportengland.org/media/2292/school-games.jpg" class="d-block w-100"
-                        alt="running">
+                    <img src="https://www.redcat-digital.com/wp-content/uploads/2018/11/ice-hockey.jpg" id="bannerImg2" class="d-block w-100"
+                        alt="iceHockey_banner">
                 </div>
                 <div class="carousel-item" style="margin-top: -250px;">
-                    <img src="https://3.bp.blogspot.com/-W2ihEskPLLY/V6eQ5CcLKmI/AAAAAAAAd4Y/SkmTHRBKLCQr4ePIrSFGMERBVwfJKHYawCLcB/s1600/Edit_Olympic_Swimming_0009.JPG"
-                        class="d-block w-100" alt="swimming">
+                    <img src="https://www.worldphoto.org/sites/default/files/4%29%20Yusuke%20Murata%2C%20Japan%2C%20Shortlist%2C%20Sport%2C%20Professional%20Competition%2C%202013.jpg"
+                        class="d-block w-100" alt="waterPolo_banner" id="bannerImg3">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -88,44 +96,38 @@
                         <img class="card-img-top" style="border-radius: 20px;" data-bind="attr: { src: imagem }"
                             alt="Card image cap">
                         <div class="card-body">
-                            <button type="button" data-bind="text : title" class="btn btn-primary" data-toggle="modal"
+                            <button type="button" data-bind="html : title, click: $parent.fillModal" class="btn btn-primary" data-toggle="modal"
                                 data-target="#modalNoticias"></button>
                             <!--<p class="card-text" data-bind="text : title"></p>-->
                         </div>
-
-
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="modalNoticias" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalCenterTitle" data-bind="text : title">
-                                        </h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p data-bind="text : text"></p>
-
-                                        <button type="button" class="btn btn-secondary" style="float: right;"
-                                            data-dismiss="modal">Close</button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end MODAL-->
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modalNoticias" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle" data-bind="text : modalTitle">
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p data-bind="text : modalText"></p>
 
+                <button type="button" class="btn btn-secondary" style="float: right;"
+                    data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- end MODAL-->
 
 </section>

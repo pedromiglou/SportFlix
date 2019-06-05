@@ -5,14 +5,19 @@ define(['plugins/http', 'durandal/app', 'knockout'], function (http, app, ko) {
             localStorage.setItem("reload", "false");
         }
         self = this;
-        self.players = ko.observableArray([
-            {'number' : 09 , 'name' : 'Robert Lewandowski', 'position' : 'Forward'},
-            {'number' : 25 , 'name' : 'Thomas Müller', 'position' : 'Forward'},
-            {'number' : 32 , 'name' : 'Joshua Kimmich', 'position' : 'Defender'}
-        ]);
 
         self.selectedTeam = ko.observable(localStorage.getItem("selectedTeam"));
 
+        if (self.selectedTeam() == "FC Bayern München") {
+            self.players = ko.observableArray([
+                {'number' : 09 , 'name' : 'Robert Lewandowski', 'position' : 'Forward'},
+                {'number' : 25 , 'name' : 'Thomas Müller', 'position' : 'Forward'},
+                {'number' : 32 , 'name' : 'Joshua Kimmich', 'position' : 'Defender'}
+            ]);
+        } else {
+            self.players = ko.observableArray([]);
+        }
+        
         self.conta = ko.observable(JSON.parse(localStorage.getItem("ativa")));
 
         self.followed = ko.observable(self.conta().favouriteTeams.indexOf(self.selectedTeam()) > -1);

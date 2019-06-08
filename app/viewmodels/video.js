@@ -35,7 +35,7 @@ define(['plugins/http', 'durandal/app', 'knockout'], function (http, app, ko) {
         self.Submit = function() {
             if (self.input() != "") {
                 self.comments().reverse();
-                self.comments().push(JSON.parse(localStorage.getItem("ativa")).username + ": " + self.input());
+                self.comments().push({'username' : JSON.parse(localStorage.getItem("ativa")).username, 'comment' : self.input()});
                 self.comments.valueHasMutated();
                 self.input("");
                 localStorage.setItem(self.titulo(), JSON.stringify(self.comments()));

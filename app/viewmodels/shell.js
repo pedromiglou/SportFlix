@@ -8,14 +8,14 @@
         },
         activate: function () {
             router.map([
-                { route: '', title:'Welcome', moduleId: 'viewmodels/welcome', nav: false },
+                { route: '', title:'HighLights', moduleId: 'viewmodels/welcome', nav: false },
                 { route: 'Events', moduleId: 'viewmodels/eventos', nav: true},
                 { route: 'Sports', moduleId: 'viewmodels/desporto', nav: true },
                 { route: 'Leagues', moduleId: 'viewmodels/ligas', nav: true },
                 { route: 'MyAccount', moduleId: 'viewmodels/conta', nav: true },
-                { route: 'liga', moduleId: 'viewmodels/liga', nav: false },
-                { route: 'desporto1', moduleId: 'viewmodels/desporto1', nav: false },
-                { route: 'equipa', moduleId: 'viewmodels/equipa', nav: false },
+                { route: 'League', moduleId: 'viewmodels/liga', nav: false },
+                { route: 'Games', moduleId: 'viewmodels/desporto1', nav: false },
+                { route: 'Team', moduleId: 'viewmodels/equipa', nav: false },
                 { route: 'WatchGame', moduleId: 'viewmodels/video', nav: false }
 
             ]).buildNavigationModel();

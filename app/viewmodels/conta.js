@@ -31,7 +31,7 @@ define(['plugins/http', 'durandal/app', 'knockout'], function (http, app, ko) {
             console.log(name);
             localStorage.setItem("selectedTeam", name);
             localStorage.setItem("reload", "true");
-            window.location.replace("#equipa");
+            window.location.replace("#Team");
         }
 
         self.setSelectedGame = function(game) {

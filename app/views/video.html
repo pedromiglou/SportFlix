@@ -44,7 +44,7 @@
             </div>
         </form>
         <div data-bind="foreach: comments">
-            <p data-bind="text: $data"></p>
+            <strong><p data-bind="text: username +':'"></p></strong><p data-bind="text: comment"></p>
         </div>
     </div>
 

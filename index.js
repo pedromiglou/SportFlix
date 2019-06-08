@@ -2,10 +2,11 @@ var vm = function () {
     var self = this;
 
     self.data = ko.observableArray([
-        { 'fname' : 'Super', 'lname' : 'user', 'email' : 'super@gmail.com', 'username' : 'Super User', 'password' : 'palavrapasse', 'favouriteTeams' : [],
-            'isSpecialAccount' : true, 'favouriteGames' : [], 'watchLater' : [], 'history' : [], 'savedEvents' : []},
-        { 'fname' : 'Casual', 'lname' : 'user', 'email' : 'casual@gmail.com', 'username' : 'Casual User', 'password' : 'palavrapasse', 'favouriteTeams' : [],
-            'isSpecialAccount' : false, 'favouriteGames' : [], 'watchLater' : [], 'history' : [], 'savedEvents' : []}
+        { 'fname' : 'Osvaldo', 'lname' : 'Oliveira', 'email' : 'super@gmail.com', 'username' : 'Osvaldo', 'password' : 'palavrapasse', 'favouriteTeams' : ["FC Bayern München"],
+            'isSpecialAccount' : true, 'favouriteGames' : [{'id':'1', 'team1' : 'Benfica', 'team2' : 'Braga', 'sport' : 'Football', 'country' : 'Portugal', 'year': 2019},
+            {'id':'2', 'team1' : 'Sporting', 'team2' : 'Guimarães', 'sport' : 'Football', 'country' : 'Portugal', 'year' : 2018}], 'watchLater' : [{'id':'3', 'team1' : 'Porto', 'team2' : 'Belenenses', 'sport' : 'Football', 'country' : 'Portugal', 'year' : 2018}], 'history' : [], 'savedEvents' : []},
+        { 'fname' : 'Gertrudes', 'lname' : 'Gomes', 'email' : 'casual@gmail.com', 'username' : 'Gertrudes', 'password' : 'palavrapasse', 'favouriteTeams' : ["Borussia Dortmund"],
+            'isSpecialAccount' : false, 'favouriteGames' : [{'id':'5', 'team1' : 'Alexander Zverev' , 'team2' : 'Matteo Berrettini', 'sport' : 'Tennis' , 'country' : 'Italy' , 'year' : 2019}], 'watchLater' : [{'id':'6', 'team1' : 'Benoit Paire' , 'team2' : 'Diego Shwartzman', 'sport' : 'Tennis' , 'country' : 'Germany' , 'year' : 2019}], 'history' : [], 'savedEvents' : []}
     ]);
     self.fname = ko.observable('');
     self.lname = ko.observable('');

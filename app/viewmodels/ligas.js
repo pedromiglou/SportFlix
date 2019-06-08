@@ -1,7 +1,7 @@
 define(['plugins/http', 'durandal/app', 'knockout'], function (http, app, ko) {
     var vm = function () {
         displayName = 'Leagues';
-        nextPage = ko.observable("#liga");
+        nextPage = ko.observable("#League");
         images =  ko.observableArray([{ name: "Bundesliga", flag: "./img/BundesLiga.png" }, 
         {name: "La Liga", flag: "./img/La_Liga.png"}, 
         {name: "Ligue 1", flag: "./img/Ligue_1.png"},
@@ -13,7 +13,7 @@ define(['plugins/http', 'durandal/app', 'knockout'], function (http, app, ko) {
 
         selectLeague = function(name) {
             localStorage.setItem("selectedLeague", name);
-            nextPage("#liga");
+            nextPage("#League");
         }
     };
     return vm;
